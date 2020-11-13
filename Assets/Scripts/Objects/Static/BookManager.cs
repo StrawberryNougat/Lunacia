@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using WakingSightNS;
 
 public class BookManager : MonoBehaviour
 {
@@ -99,6 +101,8 @@ public class BookManager : MonoBehaviour
     public void CloseBook()
     {
         bookAnimator.SetBool("isOpen", false);
+        DisableCurrentPage();
+        currentPage = 0;
         player.GetComponent<PlayerController>().enabled = true;
         player.GetComponent<WakingSight>().enabled = true;
         // DisableBook();
